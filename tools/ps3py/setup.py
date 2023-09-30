@@ -1,4 +1,8 @@
-from distutils.core import setup, Extension
+import sys
+if sys.version_info >= (3, 10):
+	from setuptools import setup, Extension
+else:
+	from distutils.core import setup, Extension
 
 module1 = Extension('pkgcrypt', sources = ['crypt.c'])
 
